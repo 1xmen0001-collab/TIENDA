@@ -26,30 +26,16 @@ function login() {
   alert("Sesión iniciada");
 }
 
-<<<<<<< HEAD
 function cerrarSesion() {
   sessionStorage.clear();
   carrito = [];
   location.reload();
 }
 
-=======
-function logout() {
-  sessionStorage.clear();
-  carrito = [];
-  mostrarCarrito();
-}
-
-mostrarCarrito();
->>>>>>> e4112887cc17142c74253892f431d9921f3e480a
 function comprar(event) {
   event.preventDefault();
 
   let nombre = document.getElementById("nombre").value;
-<<<<<<< HEAD
-=======
-  let direccion = document.getElementById("direccion").value;
->>>>>>> e4112887cc17142c74253892f431d9921f3e480a
   let correo = document.getElementById("correo").value;
   let telefono = document.getElementById("telefono").value;
 
@@ -69,10 +55,6 @@ function comprar(event) {
   sessionStorage.clear();
   carrito = [];
   mostrarCarrito();
-<<<<<<< HEAD
 }
 
 mostrarCarrito();
-=======
-}
->>>>>>> e4112887cc17142c74253892f431d9921f3e480a
