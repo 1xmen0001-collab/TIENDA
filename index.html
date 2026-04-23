@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <title>SportyStyle</title>
 </head>
@@ -45,6 +46,28 @@
 
 <form onsubmit="comprar(event)">
   <input type="text" id="nombre" placeholder="Nombre" required><br><br>
+=======
+  <title>Tienda</title>
+</head>
+<body>
+
+<h1>Mi tienda</h1>
+
+<button onclick="login()">Iniciar sesión</button>
+<button onclick="logout()">Cerrar sesión</button>
+
+<h2>Productos</h2>
+
+<button onclick="agregar('Camiseta', 10000)">Camiseta</button>
+<button onclick="agregar('Pantalon', 20000)">Pantalón</button>
+<button onclick="agregar('Accesorio', 5000)">Accesorio</button>
+
+<h2>Carrito</h2>
+<h2>Finalizar compra</h2>
+
+<form onsubmit="comprar(event)">
+  <input type="text" id="nombre" placeholder="Nombre completo" required><br><br>
+>>>>>>> e4112887cc17142c74253892f431d9921f3e480a
   <input type="text" id="direccion" placeholder="Dirección" required><br><br>
   <input type="email" id="correo" placeholder="Correo" required><br><br>
   <input type="text" id="telefono" placeholder="Teléfono" required><br><br>
@@ -53,6 +76,11 @@
 </form>
 
 <p id="mensaje"></p>
+<<<<<<< HEAD
+=======
+<ul id="carrito"></ul>
+<p id="total"></p>
+>>>>>>> e4112887cc17142c74253892f431d9921f3e480a
 
 <script src="app.js"></script>
 
