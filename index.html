@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SportyStyle</title>
+</head>
+<body>
+
+<h1>SportyStyle</h1>
+
+<button onclick="login()">Iniciar sesión</button>
+<button onclick="cerrarSesion()">Cerrar sesión</button>
+
+<h2>Productos</h2>
+
+<div>
+  <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg" width="150">
+  <p><b>Camiseta deportiva</b></p>
+  <p>Ideal para entrenamiento</p>
+  <p>$10000</p>
+  <button onclick="agregar('Camiseta', 10000)">Agregar al carrito</button>
+</div>
+
+<div>
+  <img src="https://images.pexels.com/photos/6311605/pexels-photo-6311605.jpeg" width="150">
+  <p><b>Pantalón deportivo</b></p>
+  <p>Perfecto para ejercicio</p>
+  <p>$20000</p>
+  <button onclick="agregar('Pantalon', 20000)">Agregar al carrito</button>
+</div>
+
+<div>
+  <img src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg" width="150">
+  <p><b>Accesorio deportivo</b></p>
+  <p>Complemento ideal</p>
+  <p>$5000</p>
+  <button onclick="agregar('Accesorio', 5000)">Agregar al carrito</button>
+</div>
+
+<h2>Carrito</h2>
+<ul id="carrito"></ul>
+<p id="total"></p>
+
+<h2>Finalizar compra</h2>
+
+<form onsubmit="comprar(event)">
+  <input type="text" id="nombre" placeholder="Nombre" required><br><br>
+  <input type="text" id="direccion" placeholder="Dirección" required><br><br>
+  <input type="email" id="correo" placeholder="Correo" required><br><br>
+  <input type="text" id="telefono" placeholder="Teléfono" required><br><br>
+
+  <button type="submit">Comprar</button>
+</form>
+
+<p id="mensaje"></p>
+
+<script src="app.js"></script>
+
+</body>
+</html>
