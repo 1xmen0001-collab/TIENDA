@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>SportyStyle</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f4f4f4;
+      text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      background: #222;
+      color: white;
+      padding: 15px;
+    }
+
+    .producto {
+      background: white;
+      margin: 15px auto;
+      padding: 10px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    img {
+      width: 150px;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    #carrito {
+      list-style: none;
+      padding: 0;
+    }
+  </style>
 </head>
-<style>
-body {
-  font-family: Arial;
-  background: #f4f4f4;
-  text-align: center;
-}
 
-h1 {
-  color: #333;
-}
-
-div {
-  background: white;
-  margin: 15px auto;
-  padding: 10px;
-  width: 250px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px gray;
-}
-
-button {
-  padding: 5px 10px;
-  margin-top: 5px;
-  cursor: pointer;
-}
-</style>
 <body>
 
 <h1>SportyStyle</h1>
@@ -39,22 +54,22 @@ button {
 
 <h2>Productos</h2>
 
-<div>
-  <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg" width="150">
+<div class="producto">
+  <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg">
   <p><b>Camiseta deportiva</b></p>
   <p>$10000</p>
   <button onclick="agregar('Camiseta', 10000)">Agregar al carrito</button>
 </div>
 
-<div>
-  <img src="https://images.pexels.com/photos/6311605/pexels-photo-6311605.jpeg" width="150">
+<div class="producto">
+  <img src="https://images.pexels.com/photos/6311605/pexels-photo-6311605.jpeg">
   <p><b>Pantalón deportivo</b></p>
   <p>$20000</p>
   <button onclick="agregar('Pantalon', 20000)">Agregar al carrito</button>
 </div>
 
-<div>
-  <img src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg" width="150">
+<div class="producto">
+  <img src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg">
   <p><b>Accesorio deportivo</b></p>
   <p>$5000</p>
   <button onclick="agregar('Accesorio', 5000)">Agregar al carrito</button>
