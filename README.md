@@ -1,160 +1,190 @@
 # 🛒 Proyecto: SportyStyle - Tienda Virtual
 
 ## 📌 1. Introducción
-El presente proyecto consiste en el desarrollo de una tienda virtual denominada **SportyStyle**, cuyo objetivo es simular el proceso de compra de productos deportivos mediante una aplicación web básica.
+El presente proyecto consiste en el desarrollo de una tienda virtual llamada **SportyStyle**, cuyo objetivo es simular el proceso de compra de productos deportivos mediante una aplicación web.
 
-El sistema permite a los usuarios visualizar productos, agregarlos a un carrito de compras y completar un formulario para simular una compra, incorporando validaciones y almacenamiento temporal de datos.
+El sistema permite a los usuarios visualizar productos, agregarlos a un carrito de compras y completar un formulario para simular una compra, incorporando validaciones y almacenamiento de datos mediante sessionStorage.
 
 ---
 
 ## 🎯 2. Objetivos
 
 ### Objetivo General
-Desarrollar una aplicación web funcional que simule una tienda online utilizando tecnologías básicas de desarrollo web.
+Desarrollar una aplicación web funcional que simule una tienda online.
 
 ### Objetivos Específicos
-- Implementar una interfaz de usuario clara y funcional
-- Aplicar manipulación del DOM con JavaScript
-- Utilizar almacenamiento local (sessionStorage)
-- Validar datos ingresados por el usuario
-- Simular un proceso de compra completo
+- Implementar una interfaz simple y clara
+- Manipular el DOM con JavaScript
+- Utilizar sessionStorage
+- Validar datos del usuario
+- Simular un flujo completo de compra
 
 ---
 
-## 🛠️ 3. Tecnologías Utilizadas
-
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla JS)  
-- sessionStorage  
-
----
-
-## ⚙️ 4. Funcionalidades del Sistema
-
-### 4.1 Inicio de Sesión
-Se implementa un sistema de inicio de sesión simple mediante un `prompt`, donde el usuario ingresa su nombre.  
-Este dato se almacena en `sessionStorage` y se muestra en pantalla como mensaje de bienvenida.
+## 🛠️ 3. Tecnologías utilizadas
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- sessionStorage
 
 ---
 
-### 4.2 Catálogo de Productos
-El sistema presenta tres productos:
-- Camiseta deportiva  
-- Pantalón deportivo  
-- Accesorio deportivo  
+## ⚙️ 4. Funcionalidades
 
-Cada producto incluye:
-- Imagen representativa  
-- Nombre  
-- Precio  
-- Botón para agregar al carrito  
+### 🧍 Inicio de sesión
+El usuario ingresa su nombre mediante un prompt.  
+Este dato se guarda en sessionStorage y se muestra en pantalla como mensaje de bienvenida.
 
 ---
 
-### 4.3 Carrito de Compras
-El carrito permite:
-- Agregar productos dinámicamente  
-- Visualizar los productos seleccionados  
-- Calcular el total de la compra automáticamente  
+### 🛍️ Productos
+Se presentan tres productos:
+- Camiseta deportiva
+- Pantalón deportivo
+- Accesorio deportivo
 
-Los datos del carrito se almacenan en `sessionStorage`, permitiendo mantener la información durante la sesión.
-
----
-
-### 4.4 Formulario de Compra
-Para finalizar la compra, el usuario debe completar un formulario con:
-- Nombre  
-- Dirección  
-- Correo electrónico  
-- Teléfono  
+Cada uno tiene imagen, nombre, precio y botón para agregar al carrito.
 
 ---
 
-### 4.5 Validación de Datos
-Se implementan validaciones básicas:
-- El correo debe contener el carácter "@"  
-- El teléfono debe ser numérico  
+### 🛒 Carrito de compras
+- Permite agregar productos
+- Muestra los productos seleccionados
+- Calcula el total automáticamente
+- Se guarda en sessionStorage
 
 ---
 
-### 4.6 Confirmación de Compra
-Una vez validado el formulario, el sistema muestra un mensaje con:
-- Nombre del usuario  
-- Dirección de envío  
-- Total de la compra  
+### 🧾 Formulario de compra
+El usuario debe ingresar:
+- Nombre
+- Dirección
+- Correo
+- Teléfono
+
+---
+
+### ✅ Validaciones
+- El correo debe contener "@"
+- El teléfono debe ser numérico
+
+---
+
+### 💬 Confirmación de compra
+Se muestra un mensaje final con:
+- Nombre
+- Dirección
+- Total de la compra
 
 Ejemplo:  
 Gracias por tu compra, Juan. Enviaremos tu pedido a: Calle 123. Total: $35000
 
 ---
 
-### 4.7 Cierre de Sesión
-El usuario puede cerrar sesión, lo que:
-- Elimina los datos almacenados en sessionStorage  
-- Vacía el carrito  
-- Reinicia la aplicación  
+### 🔄 Cierre de sesión
+- Limpia sessionStorage
+- Vacía el carrito
+- Reinicia la aplicación
 
 ---
 
 ## 🧠 5. Uso de sessionStorage
 Se utiliza para:
-- Guardar el carrito de compras  
-- Guardar el nombre del usuario  
+- Guardar el carrito de compras
+- Guardar el nombre del usuario
 
-Esto permite simular una sesión activa mientras la página está abierta.
-
----
-
-## 🔐 6. Intento de Implementación con Auth0
-
-Durante el desarrollo se intentó integrar **Auth0** para implementar autenticación real.
-
-### Problemas encontrados:
-- Dificultades en la configuración del dominio y credenciales  
-- Problemas de redirección en el login  
-- Necesidad de backend para una integración completa  
-- Complejidad mayor al alcance del proyecto  
-
-### Decisión tomada:
-Se optó por utilizar `sessionStorage` para simular el inicio de sesión, asegurando el correcto funcionamiento del sistema y el cumplimiento de los objetivos.
+Esto permite mantener la información mientras la página esté abierta.
 
 ---
 
-## 📊 7. Resultados
+## 🔐 6. Flujo de Autenticación con Auth0 (Propuesto)
+
+Se consideró implementar autenticación mediante Auth0 con el siguiente flujo:
+
+1. El usuario hace clic en "Iniciar sesión"
+2. Es redirigido a Auth0
+3. Ingresa sus credenciales
+4. Auth0 valida la información
+5. El usuario es redirigido nuevamente a la aplicación
+6. Se obtiene la información del usuario autenticado
+
+### Implementación intentada
+Se realizaron pruebas utilizando:
+- createAuth0Client()
+- loginWithRedirect()
+- handleRedirectCallback()
+
+### Dificultades encontradas
+- Problemas en la configuración del dominio
+- Errores en la redirección del login
+- Necesidad de backend para integración completa
+- Complejidad superior al alcance del proyecto
+
+### Solución adoptada
+Se implementó un sistema de autenticación simple con sessionStorage, permitiendo:
+- Simular inicio de sesión
+- Mantener sesión activa
+- Garantizar funcionamiento estable
+
+---
+
+## 🛒 7. Proceso de selección de productos
+
+El usuario selecciona productos mediante botones "Agregar".
+
+Los productos se almacenan en un arreglo (carrito) y luego en sessionStorage, lo que permite:
+- Mantener los datos durante la sesión
+- Actualizar el carrito dinámicamente
+- Calcular el total automáticamente
+
+---
+
+## 🔄 8. Manejo de sesión
+
+La sesión se mantiene utilizando sessionStorage:
+
+- Se guarda el nombre del usuario al iniciar sesión
+- El carrito se mantiene activo durante la sesión
+- Al cerrar sesión se eliminan todos los datos
+
+Esto simula el comportamiento de una sesión real sin necesidad de backend.
+
+---
+
+## 📊 9. Resultados
 El sistema final permite:
-- Navegar productos  
-- Agregar al carrito  
-- Calcular totales  
-- Validar datos  
-- Simular una compra completa  
+- Navegar productos
+- Agregar al carrito
+- Calcular totales
+- Validar datos
+- Completar una compra
 
 ---
 
-## 🚀 8. Posibles Mejoras
-- Integración con base de datos  
-- Autenticación real (Auth0 o Firebase)  
-- Sistema de pagos  
-- Diseño responsive  
+## 🚀 10. Posibles mejoras
+- Integración con base de datos
+- Autenticación real (Auth0 o Firebase)
+- Sistema de pagos
+- Diseño responsive
 
 ---
 
-## 📁 9. Estructura del Proyecto
+## 📁 11. Estructura del proyecto
 
-TIENDA/  
+TIENDA/
 │── index.html  
 │── app.js  
 │── README.md  
 
 ---
 
-## ▶️ 10. Ejecución del Proyecto
+## ▶️ 12. Ejecución del proyecto
 
-1. Abrir la carpeta en Visual Studio Code  
+1. Abrir en Visual Studio Code  
 2. Ejecutar con Live Server o abrir index.html  
-3. Interactuar con la tienda  
+3. Probar el flujo completo  
 
 ---
 
-## 👨‍💻 11. Autor
+## 👨‍💻 13. Autor
 Proyecto desarrollado como parte de evaluación académica.
