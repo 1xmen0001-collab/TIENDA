@@ -23,7 +23,7 @@ function mostrarCarrito() {
 }
 
 function login() {
-  alert("Sesión iniciada");
+  alert("Bienvenido Cliente");
 }
 
 function cerrarSesion() {
@@ -49,8 +49,10 @@ function comprar(event) {
     return;
   }
 
+  let total = carrito.reduce((acc, p) => acc + p.precio, 0);
+
   document.getElementById("mensaje").textContent =
-    "Gracias por tu compra, " + nombre;
+    "Gracias por tu compra, " + nombre + ". Total: $" + total;
 
   sessionStorage.clear();
   carrito = [];

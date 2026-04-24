@@ -6,6 +6,7 @@ Aplicación web que simula una tienda de ropa deportiva. Permite iniciar sesión
 ## 🔐 Autenticación
 Se simula el inicio de sesión mediante un botón.  
 El cierre de sesión elimina los datos usando sessionStorage.
+Se simula el inicio de sesión. En una implementación real, se utilizaría Auth0 para gestionar la autenticación segura de usuarios.
 
 ## 🛒 Productos
 La tienda incluye:
