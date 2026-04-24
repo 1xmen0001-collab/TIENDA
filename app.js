@@ -23,7 +23,18 @@ function mostrarCarrito() {
 }
 
 function login() {
-  alert("Bienvenido Cliente");
+  let nombre = prompt("Ingresa tu nombre:");
+  if (nombre) {
+    sessionStorage.setItem("usuario", nombre);
+    mostrarUsuario();
+  }
+}
+
+function mostrarUsuario() {
+  let nombre = sessionStorage.getItem("usuario");
+  if (nombre) {
+    document.getElementById("user").textContent = "Bienvenido " + nombre;
+  }
 }
 
 function cerrarSesion() {
@@ -36,6 +47,7 @@ function comprar(event) {
   event.preventDefault();
 
   let nombre = document.getElementById("nombre").value;
+  let direccion = document.getElementById("direccion").value;
   let correo = document.getElementById("correo").value;
   let telefono = document.getElementById("telefono").value;
 
@@ -52,7 +64,9 @@ function comprar(event) {
   let total = carrito.reduce((acc, p) => acc + p.precio, 0);
 
   document.getElementById("mensaje").textContent =
-    "Gracias por tu compra, " + nombre + ". Total: $" + total;
+    "Gracias por tu compra, " + nombre +
+    ". Enviaremos tu pedido a: " + direccion +
+    ". Total: $" + total;
 
   sessionStorage.clear();
   carrito = [];
@@ -60,3 +74,4 @@ function comprar(event) {
 }
 
 mostrarCarrito();
+mostrarUsuario();

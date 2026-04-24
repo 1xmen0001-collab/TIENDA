@@ -9,7 +9,6 @@
       font-family: Arial;
       background: #f4f4f4;
       text-align: center;
-      margin: 0;
     }
 
     h1 {
@@ -29,18 +28,6 @@
 
     img {
       width: 150px;
-      border-radius: 10px;
-    }
-
-    button {
-      padding: 6px 12px;
-      margin-top: 5px;
-      cursor: pointer;
-    }
-
-    #carrito {
-      list-style: none;
-      padding: 0;
     }
   </style>
 </head>
@@ -49,6 +36,8 @@
 
 <h1>SportyStyle</h1>
 
+<p id="user"></p>
+
 <button onclick="login()">Iniciar sesión</button>
 <button onclick="cerrarSesion()">Cerrar sesión</button>
 
@@ -56,34 +45,37 @@
 
 <div class="producto">
   <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg">
-  <p><b>Camiseta deportiva</b></p>
+  <p>Camiseta deportiva</p>
   <p>$10000</p>
-  <button onclick="agregar('Camiseta', 10000)">Agregar al carrito</button>
+  <button onclick="agregar('Camiseta', 10000)">Agregar</button>
 </div>
 
 <div class="producto">
   <img src="https://images.pexels.com/photos/6311605/pexels-photo-6311605.jpeg">
-  <p><b>Pantalón deportivo</b></p>
+  <p>Pantalón deportivo</p>
   <p>$20000</p>
-  <button onclick="agregar('Pantalon', 20000)">Agregar al carrito</button>
+  <button onclick="agregar('Pantalon', 20000)">Agregar</button>
 </div>
 
 <div class="producto">
   <img src="https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg">
-  <p><b>Accesorio deportivo</b></p>
+  <p>Accesorio</p>
   <p>$5000</p>
-  <button onclick="agregar('Accesorio', 5000)">Agregar al carrito</button>
+  <button onclick="agregar('Accesorio', 5000)">Agregar</button>
 </div>
 
 <h2>Carrito</h2>
 <ul id="carrito"></ul>
 <p id="total"></p>
 
-<h2>Finalizar compra</h2>
+<h2>Compra</h2>
 
 <form onsubmit="comprar(event)">
   <input type="text" id="nombre" placeholder="Nombre" required><br><br>
+
+  <!-- 🔥 AQUÍ ESTÁ LA DIRECCIÓN -->
   <input type="text" id="direccion" placeholder="Dirección" required><br><br>
+
   <input type="email" id="correo" placeholder="Correo" required><br><br>
   <input type="text" id="telefono" placeholder="Teléfono" required><br><br>
 
